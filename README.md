@@ -70,4 +70,6 @@ Além dos nossos links, o protótipo contém também botões para links público
 
 Esses links são meramente ilustrativos e **não são de propriedade do projeto**.
 
+---
+
 > Usando a inovação para proteger quem mais precisa. 💜
