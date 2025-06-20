@@ -1,0 +1,241 @@
+:root {
+    --primary-color: #6a1b9a; /* Roxo escuro */
+    --secondary-color: #e1bee7; /* Roxo claro */
+    --background-color: #f3e5f5; /* Fundo lilás bem claro */
+    --text-color: #333;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --danger-high: #c62828; /* Vermelho escuro */
+    --danger-medium: #f9a825; /* Amarelo escuro */
+    --danger-low: #7cb342; /* Verde */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#app {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card.active {
+    display: flex;
+}
+
+.card h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.card p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: var(--primary-color);
+    color: white;
+    align-self: center;
+}
+
+button:hover {
+    background-color: #4a148c; /* Roxo mais escuro */
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#start-screen p strong {
+    color: var(--danger-high);
+}
+
+/* Question Screen */
+#question-screen {
+    text-align: center;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+}
+
+.question {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question p.question-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+
+.options-grid.two-columns {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+.option-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-weight: 400;
+    padding: 14px;
+}
+
+.option-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Report Screen */
+#report-content {
+    text-align: center;
+}
+
+#risk-level-display {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+#risk-level-display .level {
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#risk-level-display .message {
+    font-size: 1.1rem;
+}
+
+.risk-gravissimo { background-color: #b71c1c; }
+.risk-alto { background-color: var(--danger-high); }
+.risk-medio { background-color: var(--danger-medium); }
+.risk-baixo { background-color: var(--danger-low); }
+
+#suggestions-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+#suggestions-list li {
+    background-color: #f9f9f9;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1.5rem;
+    background-color: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 6px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+}
+
